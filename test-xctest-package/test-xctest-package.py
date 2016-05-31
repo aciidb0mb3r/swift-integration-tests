@@ -22,7 +22,7 @@
 # Verify that the tool exists and works.
 #
 # RUN: test -x %t.dir/tool/.build/debug/tool
-# RUN: %t.dir/tool/.build/debug/tool > %t.out
+# RUN: env LD_LIBRARY_PATH=%{foundation_lib_path} %t.dir/tool/.build/debug/tool > %t.out
 # RUN: %{FileCheck} --check-prefix CHECK-TOOL-OUTPUT --input-file %t.out %s
 #
 # CHECK-TOOL-OUTPUT: HI

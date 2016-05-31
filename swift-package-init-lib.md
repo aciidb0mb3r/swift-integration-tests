@@ -8,7 +8,7 @@ RUN: rm -rf %t.dir
 RUN: mkdir -p %t.dir/Project
 RUN: %{swift} package --chdir %t.dir/Project init --type library
 RUN: %{swift} build --chdir %t.dir/Project &> %t.build-log
-RUN: %{swift} test --chdir %t.dir/Project &> %t.test-log
+RUN: env LD_LIBRARY_PATH=%{foundation_lib_path} %{swift} test --chdir %t.dir/Project &> %t.test-log
 ```
 
 ## Check the build log.
